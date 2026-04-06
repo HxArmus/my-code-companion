@@ -1,10 +1,10 @@
-const axios = require("axios");
+import { get } from "axios";
 
 const getTopArticles = async (req, res) => {
   try {
     const results = await Promise.allSettled([
-      axios.get("https://dev.to/api/articles", { params: { top: 7 } }),
-      axios.get("https://dev.to/api/articles", { params: { state: "rising" } }),
+      get("https://dev.to/api/articles", { params: { top: 7 } }),
+      get("https://dev.to/api/articles", { params: { state: "rising" } }),
     ]);
 
     const topArticles =
@@ -22,4 +22,4 @@ const getTopArticles = async (req, res) => {
   }
 };
 
-module.exports = { getTopArticles };
+export default { getTopArticles };

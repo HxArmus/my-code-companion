@@ -1,7 +1,7 @@
-const Joi = require("joi");
+import { object, string } from "joi";
 
-const inputSchema = Joi.object({
-  input: Joi.string().trim().min(1).max(25000).required(),
+const inputSchema = object({
+  input: string().trim().min(1).max(25000).required(),
 });
 
 const validateInput = (req, res, next) => {
@@ -12,4 +12,4 @@ const validateInput = (req, res, next) => {
   next();
 };
 
-module.exports = validateInput;
+export default validateInput;

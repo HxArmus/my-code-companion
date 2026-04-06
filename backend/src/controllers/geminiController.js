@@ -1,4 +1,4 @@
-const gemini = require("../services/gemini");
+import gemini from "../services/gemini";
 const STACK_EXCHANGE_KEY = process.env.STACK_EXCHANGE_API;
 const getReview = async (req, res) => {
   try {
@@ -75,7 +75,7 @@ const getExplanationError = async (req, res) => {
   }
 };
 
-module.exports = {
+export default {
   getReview,
   getExplanationSimple,
   getExplanationTechnical,

@@ -1,4 +1,4 @@
-const { GoogleGenerativeAI } = require("@google/generative-ai");
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const reviewInstruction = `You are an elite code review assistant with extensive experience in analyzing, optimizing, and improving source code according to the highest industry standards. Your task is to provide an **exceptionally detailed, precise, and actionable** review of the provided code. Follow these structured guidelines:
 
@@ -198,4 +198,4 @@ async function generateResponse(input, type) {
   const result = await model.generateContent(input);
   return result.response.text();
 }
-module.exports = generateResponse;
+export default generateResponse;
